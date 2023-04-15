@@ -36,14 +36,17 @@ $(document).ready(function() {
     makeGrid(16)
 
     $('.square').mouseover(function() {
-        $(this).css('background-color', 'black')
+        var r = Math.floor(Math.random() * 256)
+        var g = Math.floor(Math.random() * 256)
+        var b = Math.floor(Math.random() * 256)
+        $(this).css('background-color', `rgb(${r}, ${g}, ${b})`)
     })
 
     $('.new-grid').click(function() {
         refreshGrid()
-        
+
         $('.square').mouseover(function() {
-            $(this).css('background-color', 'black')
+            $(this).css('background-color', `rgb(${r}, ${g}, ${b})`)
         })
     })
 })
